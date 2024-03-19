@@ -12,7 +12,7 @@ class DataBaseManager:
     # create database
 
     def make_engine(self):
-        if not database_exists('mysql+pymysql://root:root123@localhost:3306TaskManager'):
+        if not database_exists('mysql+pymysql://root:root123@localhost:3306/TaskManager'):
             create_database('mysql+pymysql://root:root123@localhost:3306/TaskManager')
 
         self.engine = create_engine('mysql+pymysql://root:root123@localhost:3306/TaskManager')
