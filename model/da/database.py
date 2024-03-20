@@ -33,10 +33,18 @@ class DataBaseManager:
         return entity
 
     def edit(self, entity):
-        pass
+        self.make_engine()
+        entity = self.session.merge(entity)
+        self.session.commit()
+        self.session.close()
+        return entity
 
     def remove(self, entity):
-        pass
+        self.make_engine()
+        entity = self.session.delete(entity)
+        self.session.commit()
+        self.session.close()
+        return entity
 
     def find_all(self, class_name):
         self.make_engine()
