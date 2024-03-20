@@ -15,7 +15,7 @@ class DataBaseManager:
         if not database_exists('mysql+pymysql://root:root123@localhost:3306/TaskManager'):
             create_database('mysql+pymysql://root:root123@localhost:3306/TaskManager')
 
-        self.engine = create_engine('mysql+pymysql://root:root123@localhost:3306/TaskManager')
+        self.engine = create_engine('mysql+pymysql://root:root123@localhost:3306/TaskManager', echo=True)
 
         # create Tables
 
@@ -27,21 +27,21 @@ class DataBaseManager:
 
     def save(self, entity):
         self.make_engine()
-        self.session.add(entity)
+        entity = self.session.add(entity)
         self.session.commit()
         self.session.close()
         return entity
 
     def edit(self, entity):
         self.make_engine()
-        self.session.merge(entity)
+        entity = self.session.merge(entity)
         self.session.commit()
         self.session.close()
         return entity
 
-    def remove(self, code):
+    def remove(self, entity):
         self.make_engine()
-        entity = self.session.delete(code)
+        entity = self.session.delete(entity)
         self.session.commit()
         self.session.close()
         return entity
