@@ -1,7 +1,13 @@
-from model.da import DataBaseManager
-from model.entity.profile import Profile
+from model.entity import *
+from model.da import *
 
-da = DataBaseManager()
+da = DatabaseManager()
 
-profile = Profile("a","dgm", "nma23@g.com", "m123")
-da.save(profile)
+profile1 = Profile("mani", "dgm")
+profile1.id = 1
+da.save(profile1)
+
+
+profile2 = Profile("new", "new")
+profile2.id = 2
+da.save(profile2)

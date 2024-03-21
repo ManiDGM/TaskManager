@@ -5,17 +5,14 @@ from sqlalchemy.orm import relationship
 
 
 class Profile(Base):
-    __tablename__ = "profile_tbl"
+    __tablename__ = "profile"
 
     id = Column(Integer, primary_key=True)
     name = Column(String(30))
     family = Column(String(30))
-    email = Column(String(500), unique=True)
-    password = Column(String(500))
 
 
-    def __init__(self, name, family, email, password):
+
+    def __init__(self, name, family):
         self.name = name
         self.family = family
-        self.email = email
-        self.password = password

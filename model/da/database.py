@@ -1,27 +1,18 @@
-from sqlalchemy import create_engine, and_, or_
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy_utils import create_database, database_exists
+from sqlalchemy_utils import database_exists, create_database
 from model.entity import *
 
 
-class DataBaseManager:
-    def __init__(self):
-        self.session = None
-        self.engine = None
-
-    # create database
-
+class DatabaseManager:
     def make_engine(self):
         if not database_exists('mysql+pymysql://root:root123@localhost:3306/TaskManager'):
             create_database('mysql+pymysql://root:root123@localhost:3306/TaskManager')
-
         self.engine = create_engine('mysql+pymysql://root:root123@localhost:3306/TaskManager', echo=True)
 
-        # create Tables
-
+        # Create Tables
         Base.metadata.create_all(self.engine)
 
-        # create session
         Session = sessionmaker(bind=self.engine)
         self.session = Session()
 
@@ -52,9 +43,10 @@ class DataBaseManager:
         self.session.close()
         return entity_list
 
+
     def find_by_id(self, class_name, id):
         self.make_engine()
-        entity = self.session.query(class_name, id)
+        entity = self.session.get(class_name, id)
         self.session.close()
         return entity
 
