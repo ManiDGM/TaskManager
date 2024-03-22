@@ -10,8 +10,12 @@ class Profile(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(30))
     family = Column(String(30))
+    email = Column(String(50))
+    password = Column(String(50))
 
 
-    def __init__(self, name, family):
+    def __init__(self, name, family, email, password):
         self.name = name
         self.family = family
+        self.email = email
+        self.password = password

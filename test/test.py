@@ -5,15 +5,10 @@ da = DatabaseManager()
 
 # ------------ SAVE ------------------
 
-#profile1 = Profile("mani", "dgm")
-#profile1.id = 1
-#da.save(profile1)
+profile1 = Profile("mani", "dgm", "m@gmail.com", "m123")
+profile1.id = 1
+da.save(profile1)
 
-
-
-#profile2 = Profile("new", "new")
-#profile2.id = 2
-#da.save(profile2)
 
 #task1 = Task("gym", profile1)
 #task1.id = 1
@@ -21,7 +16,7 @@ da = DatabaseManager()
 #da.save(task1)
 
 
-#task2 = Task("new task", profile2)
+#task2 = Task("new task", profile1)
 #task2.id = 2
 #task2.status = False
 #da.save(task2)

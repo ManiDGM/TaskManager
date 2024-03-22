@@ -3,15 +3,15 @@ from model.entity import *
 
 
 class ProfileDa(DatabaseManager):
-    def find_by_username_password(self, username, password):
+    def find_by_email_password(self, email, password):
         self.make_engine()
         result = self.session.query(Profile).filter(
-            and_(Profile.username == username, Profile.password == password)).all()
+            and_(Profile.email == email, Profile.password == password)).all()
         if result:
             return result[0]
 
-    def find_by_username(self, username):
+    def find_by_email(self, email):
         self.make_engine()
-        result = self.session.query(Profile).filter(Profile.username == username).all()
+        result = self.session.query(Profile).filter(Profile.email == email).all()
         if result:
             return result[0]
