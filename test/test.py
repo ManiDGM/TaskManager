@@ -5,18 +5,26 @@ da = DatabaseManager()
 
 # ------------ SAVE ------------------
 
-profile1 = Profile("mani", "dgm")
-profile1.id = 1
-da.save(profile1)
+#profile1 = Profile("mani", "dgm")
+#profile1.id = 1
+#da.save(profile1)
+
 
 
 #profile2 = Profile("new", "new")
 #profile2.id = 2
 #da.save(profile2)
 
-task1 = Task("gym", profile1)
-task1.id = 1
-da.save(task1)
+#task1 = Task("gym", profile1)
+#task1.id = 1
+#task1.status = True
+#da.save(task1)
+
+
+#task2 = Task("new task", profile2)
+#task2.id = 2
+#task2.status = False
+#da.save(task2)
 
 
 # ------------- FIND -----------------
@@ -27,4 +35,11 @@ da.save(task1)
 
 #profile = da.find_by_id(Profile,2)
 #print(profile.id, profile.name, profile.family)
+
+
+#task_list = da.find_all(Task)
+#for task in task_list:
+    #print(task.id, task.title, task.status, task.date_time, task.profile_id)
+
+
 

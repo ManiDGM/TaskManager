@@ -12,7 +12,6 @@ class Profile(Base):
     family = Column(String(30))
 
 
-
     def __init__(self, name, family):
         self.name = name
         self.family = family

@@ -12,7 +12,7 @@ class Task(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String(50))
     date_time = Column(DateTime)
-    #status = Column(Boolean)
+    status = Column(Boolean)
     profile_id = Column(Integer, ForeignKey("profile.id"))
 
     profile = relationship("Profile")
