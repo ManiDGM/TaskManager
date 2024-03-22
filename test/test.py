@@ -37,9 +37,10 @@ da = DatabaseManager()
 #print(profile.id, profile.name, profile.family)
 
 
-#task_list = da.find_all(Task)
+task_list = da.find_all(Task)
 #for task in task_list:
     #print(task.id, task.title, task.status, task.date_time, task.profile_id)
+
 
 
 
