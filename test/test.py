@@ -3,18 +3,24 @@ from model.da import *
 
 da = DatabaseManager()
 
-# ------------ SAVE ------------------
+# ------------ SAVE , EDIT , REMOVE ------------------
 
 #profile1 = Profile("mani", "dgm", "m@gmail.com", "m123")
 #profile1.id = 1
 #da.save(profile1)
-        #TODO: check edit,remove
+
+#profile = da.find_by_id(Profile,1)
+#profile.name = "<NAME>"
+#profile.family = "<family>"
+#profile.email = "<email>"
+#profile.password = "<password>"
+#da.edit(profile)
+#da.remove(profile)
 
 #task1 = Task("gym", profile1)
 #task1.id = 1
 #task1.status = True
 #da.save(task1)
-
 
 #task2 = Task("new task", profile1)
 #task2.id = 2
