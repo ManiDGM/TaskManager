@@ -8,6 +8,8 @@ da = DatabaseManager()
 profile1 = Profile("mani", "dgm", "m@gmail.com", "m123")
 profile1.id = 1
 da.save(profile1)
+        #TODO: check edit,remove
+
 
 
 #task1 = Task("gym", profile1)
