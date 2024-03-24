@@ -8,3 +8,5 @@ class TaskDa(DatabaseManager):
         result = self.session.query(Task).filter(Task.title == title).all()
         if result:
             return result[0]
+        else:
+            return None
