@@ -10,3 +10,9 @@ class TaskDa(DatabaseManager):
             return result[0]
         else:
             return None
+
+    def find_by_time(self, start_time, end_time):
+        self.make_engine()
+        result = self.session.query(Task).filter(between(Task.date_time >= start_time, Task.date_time <= end_time))
+        self.session.close()
+        return result
